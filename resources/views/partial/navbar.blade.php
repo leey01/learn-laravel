@@ -14,10 +14,10 @@
                     <a class="nav-link" href="http://127.0.0.1:8000/about">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="http://127.0.0.1:8000/book">Book</a>
+                    <a class="nav-link" href="http://127.0.0.1:8000/book/all">Book</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="http://127.0.0.1:8000/publisher">Publisher</a>
+                    <a class="nav-link" href="http://127.0.0.1:8000/publisher/all">Publisher</a>
                 </li>
             </ul>
         </div>

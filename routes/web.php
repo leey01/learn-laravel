@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Models\Book;
+use App\Models\BookOldmodel;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,9 +26,15 @@ Route::get('/home', function () {
     return view('home');
 });
 
-Route::get('/book', [\App\Http\Controllers\BookController::class, 'index']);
-Route::get('detail_book/{id}', [\App\Http\Controllers\BookController::class, 'show']);
-
-Route::get('/publisher', function () {
-    return view('publisher');
+Route::group(["prefix" => "/book"], function () {
+    Route::get('/all', [\App\Http\Controllers\BookController::class, 'index']);
+    Route::get('/detail/{book:nama}', [\App\Http\Controllers\BookController::class, 'show']);
+    Route::get('/create', [\App\Http\Controllers\BookController::class, 'create']);
 });
+
+Route::group(["prefix" => "/publisher"], function () {
+    Route::get('/all', [\App\Http\Controllers\PublisherController::class, 'index']);
+    Route::get('detail/{publisher:nama}', [\App\Http\Controllers\PublisherController::class, 'show']);
+});
+
+
